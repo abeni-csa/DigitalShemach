@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+#customers tr:nth-child(even){background-color: #f2f2f2;}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <!-- Style -->
-    <link rel="stylesheet" href="css/style.css">
+#customers tr:hover {background-color: #ddd;}
 
-    <title>Digital Shemach</title>
-  </head>
-  <body>
-  
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+ h1 {
+  font-size: 70px;
+  font-weight: 600;
+  background-image: linear-gradient(to left,#06c700, #000000);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-align: center;
+}
 
-  <div class="content">
-    
-    <div class="container">
-      <center><h2 class="mb-5">Digital Shemach Dashboard</h2></center>
-      <div class="table-responsive">
+</style>
+</head>
+<body>
+
+<h1>Digital Shemach</h1>
 
 <?php
 
@@ -37,14 +50,14 @@ if (!$con) {
 
 $result = mysqli_query($con, "SELECT cardID, UserName, Zeyit, Sukar, UsedDate FROM Information");
 
-echo "<table class=\"table table-striped custom-table\">
+echo "<table id=\"customers\">
           <thead>
             <tr>
-              <th scope=\"col\">Card ID</th>
-              <th scope=\"col\">Name</th>
-              <th scope=\"col\">Oil</th>
-              <th scope=\"col\">Sugar</th>
-              <th scope=\"col\">Date</th>
+              <th>Card ID</th>
+              <th>Name</th>
+              <th>Oil</th>
+              <th>Sugar</th>
+              <th>Date</th>
             </tr>
           </thead>";
 echo "<tbody>";
@@ -67,19 +80,10 @@ mysqli_close($con);
 ?>
 
 
-
-    </div>
-
-  </div>
-    
-    
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+</body>
 </html>
+
+
  <?php
 /*
 -- Create the table
@@ -95,9 +99,9 @@ CREATE TABLE Information (
 -- Insert sample data
 INSERT INTO Information (cardID, UserName, Zeyit, Sukar, UsedDate)
 VALUES
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'John Doe', 'Sample Zeyit 1', 'Sample Sukar 1', '2021-10-01'),
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Jane Smith', 'Sample Zeyit 2', 'Sample Sukar 2', '2021-10-02'),
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Alice Johnson', 'Sample Zeyit 3', 'Sample Sukar 3', '2021-10-03');
+  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'John Doe', '5 L', '6 KG', '2021-10-01'),
+  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Jane Smith', '5 L', '3 KG', '2021-10-02'),
+  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Alice Johnson', '3 L', '8 KG', '2021-10-03');
 
 */
  ?>
