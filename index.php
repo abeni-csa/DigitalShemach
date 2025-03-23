@@ -82,26 +82,3 @@ mysqli_close($con);
 
 </body>
 </html>
-
-
- <?php
-/*
--- Create the table
-CREATE TABLE Information (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  cardID CHAR(6),
-  UserName VARCHAR(255),
-  Zeyit VARCHAR(255),
-  Sukar VARCHAR(255),
-  UsedDate DATE
-);
-
--- Insert sample data
-INSERT INTO Information (cardID, UserName, Zeyit, Sukar, UsedDate)
-VALUES
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'John Doe', '5 L', '6 KG', '2021-10-01'),
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Jane Smith', '5 L', '3 KG', '2021-10-02'),
-  (CONV(FLOOR(RAND() * 16777215), 10, 16), 'Alice Johnson', '3 L', '8 KG', '2021-10-03');
-
-*/
- ?>
